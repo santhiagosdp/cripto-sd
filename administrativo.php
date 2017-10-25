@@ -52,19 +52,26 @@
                         <div>
                             <div id="encript">
                                 <h3>Encriptar</h3>
-                                <p>Escolha um arquivo para encriptar</p>
-                                <input type="file" id="cript-input" /><br/><br/>
-                                <a id="download-cript" class="disabled"><button type="button" id="encriptado-button" class="btn btn-dark ">Download Encriptado</button></a>
+								<label>Chave:
+								<input id="crip" type="text" class="form-control" placeholder="Crie uma Chave Secreta" ></label>
+								<p><p/>
+                                <p>Abaixo, selecione o arquivo para criptografar</p>
+								<input type="file" id="cript-input" /> <br/><br/>
+								
+                                <a id="download-cript" class="disabled">
+								<button type="button" id="encriptado-button" class="btn btn-dark ">Download Criptografado</button></a>
                             </div>
                         </div>
                     </div>
-
-                </br>
+                <br></br>
                <div class="col-md-4">
                         <div>
                             <div >
                                 <h3 >Decriptar</h3>
-                                <p >Escolha um arquivo já encriptado para decriptação</p>
+								<label>Chave:
+								<input id="crip" type="text" class="form-control" placeholder="Digite a Chave Secreta"></label>
+								<p><p/>
+                                <p >Abaixo, escolha o arquivo para descriptografar</p>
                                 <input type="file" id="decript-input" /><br/><br/>
                                 <a id="download-decript" class="disabled"><button type="button" id="decriptado-button" class="btn btn-warning">Download Descriptografado</button></a>
                             </div>

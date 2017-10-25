@@ -1,19 +1,17 @@
-function lerArquivo(e){
-    var arquivo = e.target.files[0];
-    if (!arquivo) {
-      return;
-    }
-}
-
 function encriptar(e){
-    var key = '123asd1';
+	var secret = document.getElementById('crip').value;  
+	if(secret==""){
+		alert("Deve digitar uma chave antes!");
+		location.reload();
+		return
+	}
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = function(e) {
         var contents = e.target.result;
-        var encriptado = CryptoJS.AES.encrypt(e.target.result, key);
+        var encriptado = CryptoJS.AES.encrypt(e.target.result, secret);
 
-        var a = document.getElementById('download-cript');
+        var a = document.getElementById('download-cript'); 
         var button = document.getElementById('encriptado-button');
         a.href = 'data:application/octet-stream,' + encriptado;
         a.download = file.name + '.aes';
@@ -21,17 +19,22 @@ function encriptar(e){
         button.classList.remove("disabled");
     };
     reader.readAsText(file);
-    alert("O arquivo foi encriptografado");
-    
+	document.getElementById('crip').value="";
+    alert("arquivo criptografado");
 }
 
 function decriptar(e){
-    var key = '123asd1';
+	var secret = document.getElementById('desc').value;
+	if(secret==""){
+		alert("Deve digitar uma chave antes!");
+		location.reload();
+		return
+	}
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = function(e) {
         var contents = e.target.result;
-        var decriptado = CryptoJS.AES.decrypt(e.target.result, key).toString(CryptoJS.enc.Latin1);
+        var decriptado = CryptoJS.AES.decrypt(e.target.result, secret).toString(CryptoJS.enc.Latin1);
         var a = document.getElementById('download-decript');
         var button = document.getElementById('decriptado-button');
         a.href = 'data:application/octet-stream,' + decriptado;
@@ -40,7 +43,8 @@ function decriptar(e){
         button.classList.remove("disabled");
     };
     reader.readAsText(file);
-    alert("O arquivo foi decriptado");
+	document.getElementById('desc').value="";
+    alert("arquivo descriptografado");
 }
 
 document.getElementById('cript-input')
