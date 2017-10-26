@@ -1,10 +1,14 @@
 function encriptar(e){
-	var secret = document.getElementById('crip').value;  
+	var secret;
+	do {
+		secret = prompt ("Digite uma Chave Secreta:");
+	}while (secret == null || secret == "");	
+	/*var secret = document.getElementById('crip').value;  
 	if(secret==""){
 		alert("Deve digitar uma chave antes!");
 		location.reload();
 		return
-	}
+	}*/
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = function(e) {
@@ -19,17 +23,21 @@ function encriptar(e){
         button.classList.remove("disabled");
     };
     reader.readAsText(file);
-	document.getElementById('crip').value="";
+	//document.getElementById('crip').value="";
     alert("arquivo criptografado");
 }
 
 function decriptar(e){
-	var secretd = document.getElementById('desc').value;
+	var secretd;
+	do {
+		secretd = prompt ("Digite uma Chave Secreta:");
+	}while (secretd == null || secretd == "");
+	/* var secretd = document.getElementById('desc').value;
 	if(secretd==""){
 		alert("Deve digitar uma chave antes!");
 		location.reload();
 		return
-	}
+	}*/
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = function(e) {
@@ -43,7 +51,7 @@ function decriptar(e){
         button.classList.remove("disabled");
     };
     reader.readAsText(file);
-	document.getElementById('desc').value="";
+	//document.getElementById('desc').value="";
     alert("arquivo descriptografado");
 }
 
