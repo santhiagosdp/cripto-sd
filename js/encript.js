@@ -24,8 +24,8 @@ function encriptar(e){
 }
 
 function decriptar(e){
-	var secret = document.getElementById('desc').value;
-	if(secret==""){
+	var secretd = document.getElementById('desc').value;
+	if(secretd==""){
 		alert("Deve digitar uma chave antes!");
 		location.reload();
 		return
@@ -34,7 +34,7 @@ function decriptar(e){
     var reader = new FileReader();
     reader.onload = function(e) {
         var contents = e.target.result;
-        var decriptado = CryptoJS.AES.decrypt(e.target.result, secret).toString(CryptoJS.enc.Latin1);
+        var decriptado = CryptoJS.AES.decrypt(e.target.result, secretd).toString(CryptoJS.enc.Latin1);
         var a = document.getElementById('download-decript');
         var button = document.getElementById('decriptado-button');
         a.href = 'data:application/octet-stream,' + decriptado;

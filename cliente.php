@@ -69,7 +69,7 @@
                             <div >
                                 <h3 >Decriptar</h3>
 								<label>Chave:
-								<input id="crip" type="text" class="form-control" placeholder="Digite a Chave Secreta"></label>
+								<input id="desc" type="text" class="form-control" placeholder="Digite a Chave Secreta"></label>
 								<p><p/>
                                 <p >Abaixo, escolha o arquivo para descriptografar</p>
                                 <input type="file" id="decript-input" /><br/><br/>
