@@ -66,7 +66,7 @@
                 <br></br>
                <div class="col-md-4">
                         <div>
-                            <div >
+                            <div>
                                 <h3 >Decriptar</h3>
 								<!--<label>Chave:
 								<input id="desc" type="text" class="form-control" placeholder="Digite a Chave Secreta"></label>
