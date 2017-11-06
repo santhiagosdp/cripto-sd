@@ -11,5 +11,5 @@
 	
 	$_SESSION['logindeslogado'] = "Deslogado com sucesso";
 	//redirecionar o usuario para a página de login
-	header("Location: index.php");
+	header("Location: index.html");  //lembrar de alterar extensão quando alterado no index
 ?>
